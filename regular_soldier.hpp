@@ -12,5 +12,8 @@ class RSoldier{
       this->color = _color;
     }
     ~RSoldier(){}
+    int getSize(){ 
+      return sizeof( x ) + sizeof( y ) + sizeof( color ) + sizeof( this );
+    }
 };
 #endif

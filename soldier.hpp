@@ -13,5 +13,8 @@ class Soldier{
       this->ex = _ex;
     }
     ~Soldier(){}
+    int getSize(){ 
+      return sizeof( x ) + sizeof( y ) + sizeof( ex ) + sizeof( this );
+    }
 };
 #endif
