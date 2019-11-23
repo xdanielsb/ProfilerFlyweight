@@ -10,20 +10,22 @@
 using namespace std;
 
 
-const char* OP1 = "WITH_FLYWEIGHT";
-const char* OP2 = "WITHOUT_FLYWEIGHT";
+static const char* OP1 = "WITH_FLYWEIGHT";
+static const char* OP2 = "WITHOUT_FLYWEIGHT";
 
-const int MAXS = (int)1e6;
-const string COLOR = string(10, 'x');
+/*
+ * MAXS: int represents the total number of soldiers to create
+ */
+static const  long long  MAXS = (long long)1e7; 
 
 namespace Test
 {
   const char* BLUE = "BLUE";
   int i = 0;
-  #include"../src/soldier.hpp"
+  #include"../src/intrinsic_soldier.hpp"
   #include"../src/regular_soldier.hpp"
 
-  long long memory_used = 0;
+  unsigned long long memory_used = 0;
   void withFlyWeight()
   {
     log("\n\tExecuting code using FlyWeight Design Pattern:\n");
@@ -31,8 +33,8 @@ namespace Test
     memory_used += ex->getSize();
     for( i = 0; i < MAXS ; i++)
     {
-      Soldier<int> *e = nullptr;
-      if( !(e = new Soldier<int>( i, i, ex)))
+      Soldier< int > *e;
+      if( !( e = new Soldier< int>( i, i, ex) ) )
       {
         log("Error: out of memory creating the soldier %d \n", i);
         return;
@@ -50,8 +52,8 @@ namespace Test
     log("\n\tExecuting code without using FlyWeight Design Pattern:\n");
     for( i = 0; i < MAXS ; i++)
     {
-      RSoldier<int> *e =  nullptr;
-      if( !(e = new RSoldier<int>( i, i, COLOR)))
+      RSoldier< int> *e =  nullptr;
+      if( !( e = new RSoldier< int>( i, i, BLUE) ) )
       {
         log("Error: out of memory creating the soldier %d \n", i);
         return;

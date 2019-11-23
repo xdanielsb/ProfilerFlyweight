@@ -16,7 +16,7 @@ class Soldier
     }
     ~Soldier(){}
     int getSize(){ 
-      return sizeof( x ) + sizeof( y ) + sizeof( ex ) + sizeof( this );
+      return sizeof( x ) + sizeof( y )  + sizeof( this );
     }
 };
 #endif
