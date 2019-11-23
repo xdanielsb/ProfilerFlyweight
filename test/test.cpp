@@ -16,11 +16,11 @@ static const char* OP2 = "WITHOUT_FLYWEIGHT";
 /*
  * MAXS: int represents the total number of soldiers to create
  */
-static const  long long  MAXS = (long long)1e7; 
+static const  long long  MAXS = (long long)1e0; 
 
 namespace Test
 {
-  const char* BLUE = "BLUE";
+  const char* BLUE ="BlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlue";
   int i = 0;
   #include"../src/intrinsic_soldier.hpp"
   #include"../src/regular_soldier.hpp"
