@@ -1,18 +1,22 @@
 #ifndef CRSOlDIER
 #define CRSOLDIER
-class RSoldier{
+template <class T>
+class RSoldier
+{
   private:
-    int x;
-    int y;
+    T x;
+    T y;
     string color;
   public:
-    RSoldier( int &_x, int &_y, string _color){
+    RSoldier( int &_x, int &_y, string _color)
+    {
       this->x = _x;
       this->y = _y;
       this->color = _color;
     }
     ~RSoldier(){}
-    int getSize(){ 
+    int getSize()
+    { 
       return sizeof( x ) + sizeof( y ) + sizeof( color ) + sizeof( this );
     }
 };

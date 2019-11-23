@@ -1,15 +1,20 @@
+#
+#    @author SANTOS Daniel, Quintana Gonzalo, Méry Andy
+#    @version 1.0 23/11/2019
+#
+
 CC = g++ 
 CFLAGS = -std=c++11 
 CSANIT = -Wshadow -Wall -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -O2 -g 
+NAMEFILE = main.cpp
 
 compile:
-	$(CC) -DLOCAL $(CFLAGS) $(SANIT) launcher.cpp
+	$(CC) -DLOCAL $(CFLAGS) $(SANIT) $(NAMEFILE) -o main.o
 
-test:
-	./a.out "WITH_FLYWEIGHT" && ./a.out "WITHOUT_FLYWEIGHT"
+testu:
+	./main.o "WITH_FLYWEIGHT" && ./main.o "WITHOUT_FLYWEIGHT"
 
-all:
-	$(CC) -DLOCAL $(CFLAGS) $(SANIT) launcher.cpp	&& ./a.out
+all: compile testu
 
-all-free:
-	$(CC) -DLOCAL $(CFLAGS)  launcher.cpp  && ./a.out
+SHELL := /bin/bash
+.DEFAULT_GOAL := all

@@ -1,13 +1,15 @@
 #include "extrinsic_soldier.hpp"
 #ifndef CSOlDIER
 #define CSOLDIER
-class Soldier{
+template <class T>
+class Soldier
+{
   private:
-    int x;
-    int y;
+    T x;
+    T y;
     ExtrinsicSoldier *ex;
   public:
-    Soldier( int &_x, int &_y, ExtrinsicSoldier *_ex){
+    Soldier( T &_x, T &_y, ExtrinsicSoldier *_ex){
       this->x = _x;
       this->y = _y;
       this->ex = _ex;

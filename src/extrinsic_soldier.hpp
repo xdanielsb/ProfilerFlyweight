@@ -1,12 +1,14 @@
 #ifndef CESOlDIER
 #define CESOLDIER
-class ExtrinsicSoldier{
+class ExtrinsicSoldier
+{
   private:
     string color;
   public:
   ExtrinsicSoldier( const string &_color ): color(_color){}
   ~ExtrinsicSoldier(){}
-  int getSize( ){
+  int getSize( )
+  {
     return sizeof( this ) + sizeof( color );
   }
 };
