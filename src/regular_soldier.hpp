@@ -17,7 +17,7 @@ class RSoldier
     ~RSoldier(){}
     int getSize()
     { 
-      return sizeof( x ) + sizeof( y ) + sizeof( color ) + sizeof( this );
+      return sizeof( x ) + sizeof( y ) + color.size() + sizeof( this );
     }
 };
 #endif

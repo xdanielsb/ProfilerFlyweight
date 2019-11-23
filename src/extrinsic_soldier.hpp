@@ -9,7 +9,7 @@ class ExtrinsicSoldier
   ~ExtrinsicSoldier(){}
   int getSize( )
   {
-    return sizeof( this ) + sizeof( color );
+    return sizeof( this ) + color.size();
   }
 };
 #endif
