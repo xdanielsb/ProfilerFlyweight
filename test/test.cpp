@@ -9,7 +9,6 @@
 #define debug( x ) cout << #x << " = "<< x <<endl;
 using namespace std;
 
-
 static const char* OP1 = "WITH_FLYWEIGHT";
 static const char* OP2 = "WITHOUT_FLYWEIGHT";
 
@@ -29,12 +28,14 @@ namespace Test
   void withFlyWeight()
   {
     log("\n\tExecuting code using FlyWeight Design Pattern:\n");
-    ExtrinsicSoldier *ex = new ExtrinsicSoldier( BLUE ); 
+    
+    shared_ptr<ExtrinsicSoldier> ex(new ExtrinsicSoldier( BLUE ));
+    
     memory_used += ex->getSize();
     for( i = 0; i < MAXS ; i++)
     {
-      Soldier< int > *e;
-      if( !( e = new Soldier< int>( i, i, ex) ) )
+      Soldier<int> *e;
+      if( !( e = new Soldier<int>( i, i, ex) ) )
       {
         log("Error: out of memory creating the soldier %d \n", i);
         return;
@@ -45,7 +46,7 @@ namespace Test
 
     log("\t\tTotal number of soldiers created %d\n", i);
     log("\t\tMemory used  = %lld bytes \n", memory_used);
-    delete ex;
+    ex = nullptr;
   }
   void withoutFlyWeight()
   {
