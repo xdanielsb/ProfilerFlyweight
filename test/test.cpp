@@ -16,7 +16,7 @@ namespace Test
   /*
    * MAXS: int represents the total number of soldiers to create
    */
-  static const  long long  MAXS = 1ll; 
+  static long long  MAXS = 1ll; 
   int i = 0;
   #include"../src/intrinsic_soldier.hpp"
   #include"../src/regular_soldier.hpp"
@@ -41,7 +41,7 @@ namespace Test
       delete e;
     }
 
-    log("\t\tTotal number of soldiers created %d\n", i);
+    log("\t\tTotal number of soldiers created = %d\n", i);
     log("\t\tMemory used  = %lld bytes \n", memory_used);
     ex = nullptr;
   }

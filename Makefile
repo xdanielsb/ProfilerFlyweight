@@ -15,7 +15,11 @@ compile:
 	$(CC) -DLOCAL $(CFLAGS) $(NAMEFILE) -o main.o
 
 testu:
-	./main.o "WITH_FLYWEIGHT" && ./main.o "WITHOUT_FLYWEIGHT"
+ifdef NUM_SOLDIERS
+	./main.o "WITH_FLYWEIGHT" $(NUM_SOLDIERS) && ./main.o "WITHOUT_FLYWEIGHT" $(NUM_SOLDIERS)
+else
+	@echo 'NUM_SOLDIERS is not defined, please check readme.'
+endif
 
 clean:
 	rm -r *.o

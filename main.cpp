@@ -14,10 +14,15 @@ static const char* OP2 = "WITHOUT_FLYWEIGHT";
 int main( int argc, char *argv[] )
 {
   auto t1 = chrono::high_resolution_clock::now();
-  if( argc <= 1)
+  if( argc <= 2)
   {
-    log("You must specify an option to execute the programs, \
+    log("You must specify an option to execute the program, \
 read the readme for more details.\n");
+    return 0;
+  }
+  Test::MAXS = atol( argv[2] );
+  if( Test::MAXS <= 0){
+    log("provide a valid NUM_SOLDIERS, this number should be >= 1 \n");
     return 0;
   }
   if( strcmp (argv[1], OP1) == 0)
