@@ -9,17 +9,14 @@
 #define debug( x ) cout << #x << " = "<< x <<endl;
 using namespace std;
 
-static const char* OP1 = "WITH_FLYWEIGHT";
-static const char* OP2 = "WITHOUT_FLYWEIGHT";
-
-/*
- * MAXS: int represents the total number of soldiers to create
- */
-static const  long long  MAXS = (long long)1e0; 
-
 namespace Test
 {
-  const char* BLUE ="BlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlueBlue";
+  const int  SIZE_NAME_COLOR = 30000;
+  const string COLOR_SOLDIER = string( SIZE_NAME_COLOR , 'h');
+  /*
+   * MAXS: int represents the total number of soldiers to create
+   */
+  static const  long long  MAXS = 1ll; 
   int i = 0;
   #include"../src/intrinsic_soldier.hpp"
   #include"../src/regular_soldier.hpp"
@@ -29,7 +26,7 @@ namespace Test
   {
     log("\n\tExecuting code using FlyWeight Design Pattern:\n");
     
-    shared_ptr<ExtrinsicSoldier> ex(new ExtrinsicSoldier( BLUE ));
+    shared_ptr<ExtrinsicSoldier> ex(new ExtrinsicSoldier( COLOR_SOLDIER ));
     
     memory_used += ex->getSize();
     for( i = 0; i < MAXS ; i++)
@@ -54,7 +51,7 @@ namespace Test
     for( i = 0; i < MAXS ; i++)
     {
       RSoldier< int> *e =  nullptr;
-      if( !( e = new RSoldier< int>( i, i, BLUE) ) )
+      if( !( e = new RSoldier< int>( i, i, COLOR_SOLDIER) ) )
       {
         log("Error: out of memory creating the soldier %d \n", i);
         return;

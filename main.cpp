@@ -8,6 +8,8 @@
 #include<bits/stdc++.h>
 #define log printf
 #include"test/test.cpp"
+static const char* OP1 = "WITH_FLYWEIGHT";
+static const char* OP2 = "WITHOUT_FLYWEIGHT";
 
 int main( int argc, char *argv[] )
 {
