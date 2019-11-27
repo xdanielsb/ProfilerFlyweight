@@ -43,7 +43,6 @@ namespace Test
 
     log("\t\tTotal number of soldiers created = %d\n", i);
     log("\t\tMemory used  = %lld bytes \n", memory_used);
-    ex = nullptr;
   }
   void withoutFlyWeight()
   {
