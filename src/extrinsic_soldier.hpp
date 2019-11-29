@@ -1,4 +1,4 @@
-#ifndef CESOlDIER
+#ifndef CESOLDIER
 #define CESOLDIER
 
 /** 

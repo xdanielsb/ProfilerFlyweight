@@ -5,8 +5,11 @@
     @author SANTOS Daniel, Quintana Gonzalo, Méry Andy
     @version 1.0 23/11/2019
 */
-#include<bits/stdc++.h>
+#include<iostream>
+#include<chrono>
+#include<string.h>
 #define log printf
+
 #include"test/test.cpp"
 static const char* OP1 = "WITH_FLYWEIGHT";
 static const char* OP2 = "WITHOUT_FLYWEIGHT";

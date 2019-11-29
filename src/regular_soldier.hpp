@@ -1,4 +1,4 @@
-#ifndef CRSOlDIER
+#ifndef CRSOLDIER
 #define CRSOLDIER
 template <class T>
 class RSoldier
