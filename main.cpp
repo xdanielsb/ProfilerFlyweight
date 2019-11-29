@@ -7,6 +7,7 @@
 */
 #include<iostream>
 #include<chrono>
+#include<memory>
 #include<string.h>
 #define log printf
 
