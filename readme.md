@@ -9,11 +9,6 @@ Comparasion of a problem to create soldiers, with and without using Flyweight de
 ```
 ##### See Makefile for details
 
-
-### Class diagram Flyweight
-
-<img src="slides/images/class.png" /> 
-
 ### Response Time and Memory Usage Comparasion
 <img src="slides/images/mem_length.png" /> 
 <img src="slides/images/mem_soldiers_v2.png" /> 
